@@ -15,8 +15,16 @@ const (
 	IDENT = "IDENT" // variaveis, nomes de funções etc
 	INT   = "INT"
 	// Operadores
-	ASSIGN = "="
-	PLUS   = "+"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
+	LT       = "<"
+	GT       = ">"
+	EQ       = "=="
+	NOT_EQ   = "!="
 	// Delimitadores
 	COMMA      = ","
 	SEMICOLON  = ";"
@@ -24,14 +32,24 @@ const (
 	RIGHTPAREN = ")"
 	LEFTBRACE  = "{"
 	RIGHTBRACE = "}"
-	// PALAVRAS RESERVADAS
+	// Palavras reservadas
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
 )
 
 var keywords = map[string]TokenType{
-	"fn":  FUNCTION,
-	"let": LET,
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
 // LookupIdent verifica o tipo de um identificador
